@@ -29,7 +29,7 @@ function Wait-ForWindowsReady {
  throw "Windows not ready within timeout."
 }
 # ---- main ----
-Wait-ForWindowsReady
+
 $msiUrl  = "https://aka.ms/AzureConnectedMachineAgent"
 $msiPath = "C:\Temp\AzureConnectedMachineAgent.msi"
 $logPath = "C:\Windows\Temp\ArcAgentInstall.log"
@@ -51,3 +51,4 @@ if (-not (Test-Path $agentExe)) { throw "azcmagent.exe not found at $agentExe af
 & $agentExe show | Out-Host
 Stop-Transcript
 exit 0
+
